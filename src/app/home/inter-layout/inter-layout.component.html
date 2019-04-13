@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" role="heading"   >
+<mat-toolbar-row class="mat-elevation-z6">
+  <mat-icon>book</mat-icon>
+  <span>Diary</span>
+  <span class="fill-space"></span>
+    <button (click)="logout()" mat-icon-button color="accent" style="float:right;">
+    <mat-icon >exit_to_app</mat-icon>
+  </button>
+</mat-toolbar-row>
+  <mat-toolbar-row class="mat-elevation-z2" >
+      <button mat-button routerLink="/about" >about</button><button mat-button  routerLink="/settings"  >settings</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
