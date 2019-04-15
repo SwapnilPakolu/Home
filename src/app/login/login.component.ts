@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, EmailValidator } from "@angular/forms";
 import { Router } from "@angular/router";
 import { MatSnackBar, MatVerticalStepper } from "@angular/material";
 import { Title } from "@angular/platform-browser";
@@ -23,17 +23,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: [
-        null,
+        "random@email.com",
         [Validators.email, Validators.required, Validators.minLength(6)]
       ],
-      password: [null, [Validators.required, Validators.minLength(6)]]
+      password: ["password", [Validators.required, Validators.minLength(6)]]
     });
     this.titleService.setTitle("Login");
   }
   login() {
+    
     if (this.loginForm.valid) {
-      this.authService.Authenticate();
-      this.router.navigate(["about"]);
+      this.authService.Authenticate()
+      this.router.navigate(["event"]);      
     } else {
       this.snackbar.open("invalid username or password", null, {
         duration: 2000,

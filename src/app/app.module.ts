@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material/material.module';
 import { AuthenticationService } from './authentication.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,

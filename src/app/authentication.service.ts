@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private _isAuthenticated:boolean;
-  constructor() { }
+  
+  constructor(private router:Router) { }
 
   public isAuthenticated():boolean
-  {
-    return this._isAuthenticated;
+  { 
+    if(localStorage.getItem('isAuthenticated')==="true")
+    {return true;}
+    else{return false;}
   }
   public Authenticate()
-  {
-    this._isAuthenticated=true;
+  { localStorage.setItem('isAuthenticated',"true");
+    
   }
   public Logout()
-  {
-    this._isAuthenticated=false;
+  { this.router.navigate(['login']);
+    localStorage.removeItem('isAuthenticated');
+    
   }
 }

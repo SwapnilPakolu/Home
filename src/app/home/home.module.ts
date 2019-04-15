@@ -4,7 +4,10 @@ import { HomeRoutingModule } from './home-routing.module';
 import {AboutComponent} from './about/about.component';
 import { InterLayoutComponent } from './inter-layout/inter-layout.component';
 import { SettingsComponent } from './settings/settings.component';
-import {MaterialModule} from '../material/material.module'
+import {MaterialModule} from '../material/material.module';
+import { ArticleComponent,YesNoDialog } from './article/article.component';
+import { ArticleCreateComponent } from './article-create/article-create.component'
+import {NewTabButtonComponent} from '../new-tab-button/new-tab-button.component'
 
 @NgModule({
   imports: [
@@ -12,7 +15,8 @@ import {MaterialModule} from '../material/material.module'
     HomeRoutingModule,
     MaterialModule
   ],
-  declarations: [AboutComponent, InterLayoutComponent, SettingsComponent]
+  declarations: [AboutComponent, InterLayoutComponent, SettingsComponent, ArticleComponent, ArticleCreateComponent,YesNoDialog,NewTabButtonComponent],
+  entryComponents:[YesNoDialog]
 })
 export class HomeModule { 
 

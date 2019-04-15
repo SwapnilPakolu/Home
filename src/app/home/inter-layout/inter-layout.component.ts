@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { AuthenticationService } from 'src/app/authentication.service';
 
 @Component({
   selector: 'app-inter-layout',
@@ -8,13 +9,13 @@ import {Router} from '@angular/router'
 })
 export class InterLayoutComponent implements OnInit {
   title:string;
-  constructor(private router:Router) { }
+  constructor(private router:Router,private authService:AuthenticationService) { }
 
   ngOnInit() {
   }
   logout()
   {
-   this.router.navigate(['login']); 
+   this.authService.Logout();
   }
   changeToolbarTitle(title:string)
   {
